@@ -73,6 +73,7 @@ router.get('/my-dogs', async (req, res) => {
   }
 });
 
+// Get all the dogs (code from part 1)
 router.get('/dogs', async (req, res) => {
   try{
    const [rows] = await db.execute(`
