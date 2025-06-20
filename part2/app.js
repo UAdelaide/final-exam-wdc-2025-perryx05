@@ -18,7 +18,7 @@ app.use('/api/users', userRoutes);
 
 // Session middleware
 app.use(session({
-    secret:"",
+    secret:"dogwalk-secret",
     resave: false,
     saveUninitialized: false,
     cookie: {
