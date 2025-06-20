@@ -76,17 +76,17 @@
         }
 
         // Load current user
-        // const currentUser = ref(null);
-        // async function getCurrentUser(){
-        //   try {
-        //     const res = await fetch('/api/users/me');
-        //     if (!res.ok) throw new Error('Not logged in');
-        //     currentUser.value = await res.json();
+        const currentUser = ref(null);
+        async function getCurrentUser(){
+          try {
+            const res = await fetch('/api/users/me');
+            if (!res.ok) throw new Error('Not logged in');
+            currentUser.value = await res.json();
 
-        //   } catch (err){
-        //     error.value = "Failed to get current user";
-        //   }
-        // }
+          } catch (err){
+            error.value = "Failed to get current user";
+          }
+        }
 
         // Logout function
         async function logout(){
@@ -100,7 +100,7 @@
 
         onMounted(() => {
           loadWalkRequests();
-          // getCurrentUser();
+          getCurrentUser();
         });
 
         return {
@@ -108,8 +108,8 @@
           message,
           error,
           applyToWalk,
-          // getCurrentUser,
-          // currentUser,
+          getCurrentUser,
+          currentUser,
           logout
         };
       }
