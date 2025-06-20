@@ -116,6 +116,17 @@
           }
         }
 
+
+        // Logout function
+        async function logout(){
+          try {
+            await fetch('/api/users/logout', {method: 'POST'});
+            window.location.href = 'index.html';
+          } catch (err){
+            console.error('Logout failed:', err);
+          }
+        }
+
         onMounted(() => {
           loadWalks();
         });
