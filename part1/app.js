@@ -5,4 +5,6 @@ app.use (express.json());
 
 let db;
 
-async
+async function initDB() {
+  db = await 
+}
