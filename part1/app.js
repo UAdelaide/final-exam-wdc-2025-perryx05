@@ -15,7 +15,12 @@ async function initDB() {
   });
 try {
   await db.execute(`INSERT IGNORE INTO Users (username, password, role) VALUES
-    `)
+    ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+      ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+      ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+      ('davidwalker', 'david@example.com', 'hashed000', 'walker'),
+      ('emilyowner', 'emily@example.com', 'hashed111', 'owner') `);
+  await db,execute ()
 }
 
 }
