@@ -70,7 +70,6 @@ app.get('/api/walkrequests/open', async (req, res) => {
     LEFT JOIN WalkRatings r ON u.user_id = r.walker_id
     WHERE u.role = 'walker'
     GROUP BY u.user_id
-    ORDER BY completed_walks DESC
     `);
      res.json(rows);
   } catch (err){
