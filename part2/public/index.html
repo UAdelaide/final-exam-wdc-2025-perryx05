@@ -48,7 +48,7 @@
             password: this.password
           };
           const xhr = new XMLHttpRequest();
-          xhr.open('POST', '/users/login', true);
+          xhr.open('POST', '/api/users/login', true);
           xhr.setRequestHeader('Content-Type', 'application/json');
           xhr.onreadystatechange = () => {
             if (xhr.readyState === 4){
