@@ -89,7 +89,7 @@
       xhr.send(JSON.stringify(user));
     },
     // Load the photo for each dog
-    async function loadDogs(){
+    async loadDogs(){
       try {
         const res = await fetch('/api/dogs');
         const dogList = await res.json();
@@ -105,7 +105,7 @@
     }
   },
   mounted(){
-    
+    this.loadDogs();
   }
 }).mount('#app');
   </script>
