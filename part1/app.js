@@ -34,9 +34,13 @@ try {
       ((SELECT dog_id FROM Dogs WHERE name = 'Charlie'), '2025-06-13 07:45:00', 40, 'Oak Street', 'cancelled')`);
 
       console.log('Database initialized successfully');
+} catch (err){
+  console.error('Failed to initialize database:', err);
 }
-  
 }
+
+
+
 app.get('/api/dogs', async (req, res) => {
  try{
   const [rows] = await db.execute(`
