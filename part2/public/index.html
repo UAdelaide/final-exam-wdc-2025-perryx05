@@ -89,7 +89,7 @@
           };
       xhr.send(JSON.stringify(user));
     },
-    // Load the photo for each dog
+    // Load all dogs with photos
     async loadDogs(){
       try {
         const res = await fetch('/api/dogs');
