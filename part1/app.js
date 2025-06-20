@@ -14,3 +14,4 @@ async function initDB() {
   });
 
 }
+app.get('/api/dogs')
