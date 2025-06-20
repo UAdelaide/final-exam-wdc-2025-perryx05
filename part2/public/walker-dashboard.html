@@ -81,7 +81,10 @@
           try {
             const res = await fetch('/api/users/me');
             if (!res.ok) throw new Error('Not logged in');
-            currentUser.value
+            currentUser.value = await res.json();
+
+          } catch (err){
+            error.value = er
           }
         }
 
