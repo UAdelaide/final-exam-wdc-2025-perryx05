@@ -89,7 +89,10 @@
       xhr.send(JSON.stringify(user));
     },
     async function loadDogs(){
-      
+      try {
+        const res = await fetch('/api/dogs');
+        const dogList = 
+      }
     }
   }
 }).mount('#app');
