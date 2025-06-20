@@ -19,6 +19,8 @@ app.use('/api/users', userRoutes);
 // Session middleware
 app.use(session({
     secret:"",
+    resave: false,
+    saveUninitialized: false,
     
 }))
 
