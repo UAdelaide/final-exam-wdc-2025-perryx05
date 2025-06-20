@@ -14,7 +14,8 @@ async function initDB() {
     database: 'DogWalkService'
   });
 try {
-  await db.execute(`I`)
+  await db.execute(`INSERT IGNORE INTO Users (username, password, role) VALUES
+    `)
 }
 
 }
