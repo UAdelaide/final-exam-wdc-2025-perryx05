@@ -13,6 +13,9 @@ async function initDB() {
     password: '',
     database: 'DogWalkService'
   });
+try {
+  
+}
 
 }
 app.get('/api/dogs', async (req, res) => {
