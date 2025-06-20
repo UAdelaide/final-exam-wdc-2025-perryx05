@@ -100,7 +100,7 @@
 
         onMounted(() => {
           loadWalkRequests();
-          
+          getCurrentUser();
         });
 
         return {
@@ -108,6 +108,7 @@
           message,
           error,
           applyToWalk,
+          getCurrentUser,
           logout
         };
       }
