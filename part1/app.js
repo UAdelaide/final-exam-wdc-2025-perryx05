@@ -26,7 +26,12 @@ try {
       ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Rocky', 'large'),
       ((SELECT user_id FROM Users WHERE username = 'emilyowner'), 'Luna', 'medium'),
       ((SELECT user_id FROM Users WHERE username = 'emilyowner'), 'Charlie', 'small')`);
-  await db.execute()
+  await db.execute(`INSERT IGNORE INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+      ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+      ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+      ((SELECT dog_id FROM Dogs WHERE name = 'Rocky'), '2025-06-11 10:00:00', 60, 'Riverbank Trail', 'open'),
+      ((SELECT dog_id FROM Dogs WHERE name = 'Luna'), '2025-06-12 16:00:00', 20, 'Central Park', 'open'),
+      ((SELECT dog_id FROM Dogs WHERE name = 'Charlie'), '2025-06-13 07:45:00', 40, 'Oak Street', 'cancelled')`);
 }
 
 }
