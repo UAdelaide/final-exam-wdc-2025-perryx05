@@ -3,7 +3,7 @@ const express = require ('express');
 const mysql = require ('mysql2/promise');
 const app = express();
 app.use (express.json());
-
+const port = 8080;
 
 let db;
 
@@ -12,6 +12,7 @@ async function initDB() {
     host: 'localhost',
     user: 'root',
     password: '',
+    database: 'DogWalkService'
   });
 try {
   await db.execute(`INSERT IGNORE INTO Users (username, password, role) VALUES
