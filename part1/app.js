@@ -14,7 +14,7 @@ async function initDB() {
     database: 'DogWalkService'
   });
 try {
-  
+  await db.execute(`I`)
 }
 
 }
