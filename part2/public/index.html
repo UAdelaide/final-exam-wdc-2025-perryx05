@@ -98,6 +98,9 @@
           const imgData = await imgRes.json();
           dog.photo = imgData.message;
         }
+        this.dogs = dogList;
+      } catch (err) {
+        con
       }
     }
   }
