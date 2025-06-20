@@ -92,7 +92,7 @@
     // Load all dogs with photos
     async loadDogs(){
       try {
-        const res = await fetch('/api/dogs');
+        const res = await fetch('/api/walks/dogs');
         const dogList = await res.json();
         for (let dog of dogList){
           const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
