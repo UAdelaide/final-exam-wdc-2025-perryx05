@@ -1,3 +1,4 @@
+const { prototype } = require('events');
 const express = require ('express');
 const mysql = require ('mysql2/promise');
 const app = express();
@@ -77,4 +78,5 @@ app.get('/api/walkrequests/open', async (req, res) => {
   }
  });
 
- initDB().then()
+ initDB().then(() => {
+  app.listen(prototype, ())
