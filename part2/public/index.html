@@ -54,7 +54,10 @@
             if (xhr.readyState === 4){
               if (xhr.status === 200){
                 const response = JSON.parse(xhr.responseText);
-                
+                const role = response.user.role;
+                if (role === "owner"){
+                  
+                }
             }
         }
       }
