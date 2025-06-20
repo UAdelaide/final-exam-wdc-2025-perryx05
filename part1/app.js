@@ -59,7 +59,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
    const [rows] = await db.execute(`
     SELECT
     u.username AS walker_username,
-    COUNT`);
+    COUNT(r.rating_id) AS total_ratings,
+    ROUND()`);
      res.json(rows);
   } catch (err){
      res.status(500).json({error: 'Failed to fetch walk requests', details: err.message});
