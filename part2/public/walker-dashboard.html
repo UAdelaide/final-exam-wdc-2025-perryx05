@@ -84,7 +84,7 @@
             currentUser.value = await res.json();
 
           } catch (err){
-            error.value = er
+            error.value = "Failed to get current user";
           }
         }
 
@@ -100,6 +100,7 @@
 
         onMounted(() => {
           loadWalkRequests();
+          
         });
 
         return {
