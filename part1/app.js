@@ -6,5 +6,8 @@ app.use (express.json());
 let db;
 
 async function initDB() {
-  db = await 
+  db = await mysql.createConnection({
+    host: 'localhost',
+      
+  })
 }
