@@ -62,8 +62,9 @@ app.get('/api/walkrequests/open', async (req, res) => {
     COUNT(r.rating_id) AS total_ratings,
     ROUND(AVG(r.rating), 1) AS average_rating,
     (
-      SELECT COUNT(*)
-      `);
+      SELECT COUNT(*) FROM WalkRequests wr
+      JOIN WalkApplications
+   )`);
      res.json(rows);
   } catch (err){
      res.status(500).json({error: 'Failed to fetch walk requests', details: err.message});
