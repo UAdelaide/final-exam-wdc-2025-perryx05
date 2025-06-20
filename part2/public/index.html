@@ -64,7 +64,11 @@
                 }
             }
         }
-      }
+      };
+      xhr.send(JSON.stringify(user));
+    }
+  }
+}).mount('#app');
     }).mount('#app');
   </script>
 
