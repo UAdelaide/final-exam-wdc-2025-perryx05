@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const session = require
+const session = require('express-session');
 require('dotenv').config();
 
 const app = express();
@@ -15,6 +15,9 @@ const userRoutes = require('./routes/userRoutes');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
+
+// Session middleware
+
 
 // Export the app instead of listening here
 module.exports = app;
