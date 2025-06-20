@@ -79,4 +79,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
  });
 
  initDB().then(() => {
-  app.listen(prototype, ())
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+ });
