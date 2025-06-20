@@ -48,7 +48,8 @@
             password: this.password
           };
           const xhr = new XMLHttpRequest();
-          xhr.open('POST')
+          xhr.open('POST', '/users/login', true);
+          xhr.setRequestHeader('')
         }
       }
     }).mount('#app');
