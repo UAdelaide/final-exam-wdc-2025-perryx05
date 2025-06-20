@@ -62,9 +62,11 @@
                 } else {
                   this.errorMessage = 'Invalid username or password';
                 }
+              } else {
+                this.errorMessage = 'Login failed. Please check your credentials.';
+              }
             }
-        }
-      };
+          };
       xhr.send(JSON.stringify(user));
     }
   }
