@@ -10,6 +10,7 @@ async function initDB() {
     host: 'localhost',
     user: 'root',
     password: '',
-    database: ""
-  })
+    database: 'DogWalkService'
+  });
+  
 }
