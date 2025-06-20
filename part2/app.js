@@ -21,7 +21,10 @@ app.use(session({
     secret:"",
     resave: false,
     saveUninitialized: false,
-    
+    cookie: {
+        secure: false,
+        maxAge: 24 * 60 * 60 * 1000, // 24 hours
+    }
 }))
 
 // Export the app instead of listening here
