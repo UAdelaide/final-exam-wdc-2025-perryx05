@@ -73,6 +73,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
     `);
      res.json(rows);
   } catch (err){
-     res.status(500).json({error: 'Failed to fetch walk requests', details: err.message});
+     res.status(500).json({error: 'Failed to fetch walkers requests', details: err.message});
   }
  });
+
+ initDB().then()
