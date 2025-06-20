@@ -79,6 +79,7 @@
         const currentUser = ref(null);
         async function getCurrentUser(){
           try {
+            const res = await fetch('/api/users/me');
             
           }
         }
