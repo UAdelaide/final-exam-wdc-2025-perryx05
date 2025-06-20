@@ -5,6 +5,17 @@ require('dotenv').config();
 
 const app = express();
 
+// Session middleware
+app.use(session({
+    secret:"dogwalk-secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        secure: false,
+        maxAge: 24 * 60 * 60 * 1000, // 24 hours
+    }
+}));
+
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
@@ -16,16 +27,7 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
-// Session middleware
-app.use(session({
-    secret:"dogwalk-secret",
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-        secure: false,
-        maxAge: 24 * 60 * 60 * 1000, // 24 hours
-    }
-}))
+
 
 // Export the app instead of listening here
 module.exports = app;
