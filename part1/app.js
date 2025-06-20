@@ -12,5 +12,5 @@ async function initDB() {
     password: '',
     database: 'DogWalkService'
   });
-  
+
 }
