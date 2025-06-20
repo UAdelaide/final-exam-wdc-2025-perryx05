@@ -8,6 +8,8 @@ let db;
 async function initDB() {
   db = await mysql.createConnection({
     host: 'localhost',
-      
+    user: 'root',
+    password: '',
+    database: ""
   })
 }
