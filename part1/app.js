@@ -32,8 +32,10 @@ try {
       ((SELECT dog_id FROM Dogs WHERE name = 'Rocky'), '2025-06-11 10:00:00', 60, 'Riverbank Trail', 'open'),
       ((SELECT dog_id FROM Dogs WHERE name = 'Luna'), '2025-06-12 16:00:00', 20, 'Central Park', 'open'),
       ((SELECT dog_id FROM Dogs WHERE name = 'Charlie'), '2025-06-13 07:45:00', 40, 'Oak Street', 'cancelled')`);
-}
 
+      console.log('Database initialized successfully');
+}
+  
 }
 app.get('/api/dogs', async (req, res) => {
  try{
