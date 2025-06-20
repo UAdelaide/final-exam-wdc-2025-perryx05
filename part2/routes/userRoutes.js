@@ -59,7 +59,8 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
   req.session.destroy(() => {
     res.clearCookie('connect.sid');
-    res.status(200)
-})
+    res.status(200).send('Logged out');
+  });
+});
 
 module.exports = router;
