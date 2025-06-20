@@ -56,7 +56,18 @@
           }
         }
 
-      
+        // load current user
+        const currentUser = ref(null);
+        async function getCurrentUser(){
+          try {
+            const res = await fetch('/api/users/me');
+            if (!res.ok) throw new Error('Not logged in');
+            currentUser.value = await res.json();
+
+          } catch (err){
+            error.value = "Failed to get current user";
+          }
+        }
 
         async function applyToWalk(requestId) {
           try {
@@ -77,7 +88,6 @@
           }
         }
 
-        const currentUser = ref(null);
 
 
         // Logout function
