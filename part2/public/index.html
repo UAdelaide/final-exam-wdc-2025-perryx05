@@ -95,7 +95,10 @@
         const res = await fetch('/api/walks/dogs');
         const dogList = await res.json();
 
-        if (!res.ok || )
+        if (!res.ok || !Array.isArray(dogList)){
+          console.error("Failed to load dogs:", dogList.error || dogList);
+          return;
+        }
         for (let dog of dogList){
           const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
           const imgData = await imgRes.json();
